@@ -1,2 +1,20 @@
 # link
 Redirect to all of my links
+
+Template
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="0; url=https://example.com">
+    <meta name="robots" content="noindex">
+    <title>Example | Intensed</title>
+</head>
+<body style="text-align: center; font-family: system-ui, -system-ui, sans-serif;">
+    <h1>Redirecting...</h1>
+    <p>If it doesn't work, try using these links:</p>
+    <a href="https://example.com"></a>
+</body>
+</html>
+```

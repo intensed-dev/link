@@ -1,14 +1,660 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="0; url=https://discord.gg/Ckxm8KYXU4">
-    <meta name="robots" content="noindex">
-    <title>Discord | Intensed</title>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <title>Join Rebase Discord</title>
+
+  <meta
+    name="description"
+    content="Read the Rebase rules and join the official Rebase Discord community."
+  />
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+  />
+
+  <style>
+    :root {
+      color-scheme: dark;
+
+      --background: #08090c;
+      --surface: rgba(20, 22, 28, 0.82);
+      --surface-hover: rgba(27, 30, 38, 0.95);
+      --border: rgba(255, 255, 255, 0.09);
+
+      --text: #f5f7fa;
+      --muted: #9ca3af;
+
+      --accent: #5865f2;
+      --accent-hover: #4752c4;
+
+      --success: #57f287;
+      --danger: #ed4245;
+
+      --radius: 20px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      min-height: 100%;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+
+      font-family:
+        Inter,
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+      color: var(--text);
+      background:
+        radial-gradient(
+          circle at 50% -20%,
+          rgba(88, 101, 242, 0.22),
+          transparent 45%
+        ),
+        var(--background);
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 32px 18px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 720px;
+    }
+
+    .brand {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    .brand-icon {
+      width: 64px;
+      height: 64px;
+
+      margin: 0 auto 18px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 18px;
+
+      background: linear-gradient(
+        145deg,
+        #5865f2,
+        #7289da
+      );
+
+      box-shadow:
+        0 18px 50px rgba(88, 101, 242, 0.25);
+
+      font-size: 27px;
+    }
+
+    .brand h1 {
+      margin: 0;
+
+      font-size: clamp(28px, 5vw, 42px);
+      letter-spacing: -0.035em;
+    }
+
+    .brand p {
+      margin: 9px 0 0;
+
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .card {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+
+      background: var(--surface);
+
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+
+      box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.35);
+
+      overflow: hidden;
+    }
+
+    .content {
+      padding: 30px;
+    }
+
+    .intro {
+      margin-bottom: 28px;
+    }
+
+    .intro h2 {
+      margin: 0 0 9px;
+
+      font-size: 20px;
+      letter-spacing: -0.02em;
+    }
+
+    .intro p {
+      margin: 0;
+
+      color: var(--muted);
+      line-height: 1.65;
+      font-size: 14px;
+    }
+
+    .rules {
+      display: grid;
+      gap: 10px;
+    }
+
+    .check {
+      position: relative;
+
+      display: flex;
+      align-items: flex-start;
+      gap: 13px;
+
+      padding: 16px;
+
+      border: 1px solid var(--border);
+      border-radius: 14px;
+
+      background: rgba(255, 255, 255, 0.025);
+
+      cursor: pointer;
+
+      transition:
+        background 0.15s ease,
+        border-color 0.15s ease,
+        transform 0.15s ease;
+    }
+
+    .check:hover {
+      background: var(--surface-hover);
+      border-color: rgba(255, 255, 255, 0.15);
+    }
+
+    .check:has(input:checked) {
+      border-color: rgba(87, 242, 135, 0.35);
+      background: rgba(87, 242, 135, 0.045);
+    }
+
+    .check input {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .checkbox {
+      flex: 0 0 auto;
+
+      width: 22px;
+      height: 22px;
+
+      margin-top: 1px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 7px;
+
+      color: transparent;
+
+      transition:
+        background 0.15s ease,
+        border-color 0.15s ease;
+    }
+
+    .check input:checked + .checkbox {
+      background: var(--success);
+      border-color: var(--success);
+      color: #08100b;
+    }
+
+    .check-text {
+      min-width: 0;
+    }
+
+    .check-title {
+      display: block;
+
+      font-size: 14px;
+      font-weight: 600;
+
+      line-height: 1.4;
+    }
+
+    .check-description {
+      display: block;
+
+      margin-top: 4px;
+
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    .check-description a {
+      color: #aeb6ff;
+      text-decoration: none;
+    }
+
+    .check-description a:hover {
+      text-decoration: underline;
+    }
+
+    .status {
+      display: none;
+
+      margin-top: 18px;
+      padding: 12px 14px;
+
+      border-radius: 12px;
+
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .status.show {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .status.error {
+      color: #ffb4b4;
+      background: rgba(237, 66, 69, 0.1);
+      border: 1px solid rgba(237, 66, 69, 0.2);
+    }
+
+    .status.loading {
+      color: #cdd1ff;
+      background: rgba(88, 101, 242, 0.1);
+      border: 1px solid rgba(88, 101, 242, 0.2);
+    }
+
+    .footer {
+      padding: 22px 30px;
+
+      border-top: 1px solid var(--border);
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+
+      background: rgba(0, 0, 0, 0.12);
+    }
+
+    .footer-note {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.45;
+    }
+
+    .join-button {
+      flex: 0 0 auto;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+
+      min-height: 46px;
+      padding: 0 20px;
+
+      border: 0;
+      border-radius: 12px;
+
+      background: var(--accent);
+      color: white;
+
+      font: inherit;
+      font-size: 14px;
+      font-weight: 700;
+
+      cursor: pointer;
+
+      transition:
+        background 0.15s ease,
+        transform 0.15s ease,
+        opacity 0.15s ease;
+    }
+
+    .join-button:hover:not(:disabled) {
+      background: var(--accent-hover);
+      transform: translateY(-1px);
+    }
+
+    .join-button:active:not(:disabled) {
+      transform: translateY(0);
+    }
+
+    .join-button:disabled {
+      cursor: not-allowed;
+      opacity: 0.4;
+    }
+
+    .join-button.loading {
+      pointer-events: none;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 20px 12px;
+      }
+
+      .content {
+        padding: 22px;
+      }
+
+      .footer {
+        padding: 18px 22px;
+
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .join-button {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
-<body style="text-align: center; font-family: system-ui, -system-ui, sans-serif;">
-    <h1>Redirecting...</h1>
-    <p>If it doesn't work, try using these links:</p>
-    <a href="https://discord.gg/Ckxm8KYXU4">Link #1</a>
+
+<body>
+
+  <main class="container">
+
+    <header class="brand">
+      <div class="brand-icon">
+        <i class="fa-brands fa-discord"></i>
+      </div>
+
+      <h1>Join Rebase</h1>
+
+      <p>
+        Read the rules before joining our Discord community.
+      </p>
+    </header>
+
+    <section class="card">
+
+      <div class="content">
+
+        <div class="intro">
+          <h2>Before you join</h2>
+
+          <p>
+            Please read the following documents carefully.
+            You must agree to all of them before you can join
+            the Rebase Discord server.
+          </p>
+        </div>
+
+        <div class="rules">
+
+          <label class="check">
+            <input
+              type="checkbox"
+              id="tos"
+            />
+
+            <span class="checkbox">
+              <i class="fa-solid fa-check"></i>
+            </span>
+
+            <span class="check-text">
+              <span class="check-title">
+                I agree to the Rebase Terms of Service.
+              </span>
+
+              <span class="check-description">
+                I have read and agree to follow the
+                <a href="#" target="_blank">Rebase Terms of Service</a>.
+              </span>
+            </span>
+          </label>
+
+
+          <label class="check">
+            <input
+              type="checkbox"
+              id="minecraftEula"
+            />
+
+            <span class="checkbox">
+              <i class="fa-solid fa-check"></i>
+            </span>
+
+            <span class="check-text">
+              <span class="check-title">
+                I agree to follow the Minecraft EULA.
+              </span>
+
+              <span class="check-description">
+                I understand that Rebase-related Minecraft projects
+                must comply with the
+                <a
+                  href="https://www.minecraft.net/en-us/eula"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  Minecraft EULA
+                </a>.
+              </span>
+            </span>
+          </label>
+
+
+          <label class="check">
+            <input
+              type="checkbox"
+              id="rules"
+            />
+
+            <span class="checkbox">
+              <i class="fa-solid fa-check"></i>
+            </span>
+
+            <span class="check-text">
+              <span class="check-title">
+                I agree to follow the Rebase Rules.
+              </span>
+
+              <span class="check-description">
+                I have read and agree to follow the rules
+                of the Rebase community.
+              </span>
+            </span>
+          </label>
+
+        </div>
+
+        <div
+          class="status"
+          id="status"
+          role="status"
+        ></div>
+
+      </div>
+
+      <footer class="footer">
+
+        <div class="footer-note">
+          <i class="fa-solid fa-shield-halved"></i>
+          <span>
+            A unique, single-use Discord invite will be generated
+            when you continue.
+          </span>
+        </div>
+
+        <button
+          class="join-button"
+          id="joinButton"
+          type="button"
+          disabled
+        >
+          <i class="fa-brands fa-discord"></i>
+          <span>Join Discord</span>
+        </button>
+
+      </footer>
+
+    </section>
+
+  </main>
+
+  <script>
+    const API_URL =
+      "https://discord.intensed-dev.workers.dev/create-invite";
+
+    const tos = document.getElementById("tos");
+    const minecraftEula =
+      document.getElementById("minecraftEula");
+    const rules = document.getElementById("rules");
+
+    const joinButton =
+      document.getElementById("joinButton");
+
+    const status =
+      document.getElementById("status");
+
+    function allAccepted() {
+      return (
+        tos.checked &&
+        minecraftEula.checked &&
+        rules.checked
+      );
+    }
+
+    function updateButton() {
+      joinButton.disabled = !allAccepted();
+    }
+
+    function showStatus(message, type) {
+      status.className = `status show ${type}`;
+
+      status.innerHTML = `
+        <i class="fa-solid ${
+          type === "error"
+            ? "fa-circle-exclamation"
+            : "fa-circle-notch fa-spin"
+        }"></i>
+        <span>${message}</span>
+      `;
+    }
+
+    [tos, minecraftEula, rules].forEach(
+      checkbox => {
+        checkbox.addEventListener(
+          "change",
+          updateButton
+        );
+      }
+    );
+
+    joinButton.addEventListener(
+      "click",
+      async () => {
+
+        if (!allAccepted()) {
+          return;
+        }
+
+        joinButton.disabled = true;
+        joinButton.classList.add("loading");
+
+        joinButton.innerHTML = `
+          <i class="fa-solid fa-circle-notch fa-spin"></i>
+          <span>Creating invite...</span>
+        `;
+
+        showStatus(
+          "Creating your single-use Discord invite...",
+          "loading"
+        );
+
+        try {
+
+          const response = await fetch(API_URL, {
+            method: "POST",
+
+            headers: {
+              "Content-Type": "application/json"
+            },
+
+            body: JSON.stringify({
+              tos: true,
+              minecraftEula: true,
+              rules: true
+            })
+          });
+
+          const data = await response.json();
+
+          if (!response.ok || !data.success) {
+            throw new Error(
+              data.error ||
+              "Could not create a Discord invite."
+            );
+          }
+
+          showStatus(
+            "Invite created. Redirecting to Discord...",
+            "loading"
+          );
+
+          window.location.href = data.invite;
+
+        } catch (error) {
+
+          console.error(error);
+
+          showStatus(
+            error.message ||
+            "Something went wrong. Please try again.",
+            "error"
+          );
+
+          joinButton.disabled = !allAccepted();
+
+          joinButton.classList.remove("loading");
+
+          joinButton.innerHTML = `
+            <i class="fa-brands fa-discord"></i>
+            <span>Join Discord</span>
+          `;
+        }
+      }
+    );
+
+    updateButton();
+  </script>
+
 </body>
 </html>
